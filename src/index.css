@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300..900;1,300..900&family=Montserrat:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", "Montserrat", sans-serif;
+  
+  --color-burgundy: #6B1D2F;
+  --color-burgundy-deep: #4A1521;
+  --color-burgundy-dark: #2B0C13;
+  --color-gold: #D4AF37;
+  --color-gold-light: #FAF2D3;
+  --color-gold-dark: #AA7C11;
+  --color-luxury-black: #111111;
+  --color-luxury-charcoal: #181617;
+  --color-ivory: #FAF9F6;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gold-sheen-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Premium authentic multi-stop gold leaf gradients (Texture) */
+.gold-foil-bg {
+  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+}
+
+.gold-foil-text {
+  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-metallic-border {
+  border-image: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%) 1;
+}
+
+/* Shimmer buttons with true golden foil sheen flow */
+.gold-shimmer-btn {
+  background: linear-gradient(135deg, #bf953f 0%, #faf2d3 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  background-size: 200% auto;
+  animation: gold-sheen-move 6s infinite linear;
+}
+
+.gold-shimmer-btn-dark {
+  background: linear-gradient(90deg, #6B1D2F 0%, #4A1521 35%, #6B1D2F 70%, #4A1521 85%, #6B1D2F 100%);
+  background-size: 200% auto;
+  animation: shimmer 4s infinite linear;
+}
+
+.gold-text-shimmer {
+  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  background-size: 200% auto;
+  animation: gold-sheen-move 8s infinite ease-in-out;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.editorial-gold {
+  background: linear-gradient(90deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%);
+}
+
+/* Luxury gold borders with metallic shines */
+.luxury-gold-border {
+  border: 1px solid transparent;
+  background-image: linear-gradient(#111111, #111111), linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.luxury-gold-border-light {
+  border: 1px solid transparent;
+  background-image: linear-gradient(#faf9f6, #faf9f6), linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+
