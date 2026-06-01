@@ -1,0 +1,54 @@
+name: Deploy Static Content to Pages
+
+on:
+  # Kích hoạt quy trình khi có code được đẩy (push) lên nhánh main
+  push:
+    branches: ["main"]
+
+  # Cho phép kích hoạt quy trình thủ công từ thẻ Actions trên GitHub
+  workflow_dispatch:
+
+# Thiết lập các quyền hạn tối thiểu cần thiết để deploy lên GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Chỉ cho phép chạy song song một tiến trình triển khai để tránh xung đột dữ liệu
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài đặt Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Cài đặt tất cả Dependencies
+        run: npm ci
+
+      - name: Build ứng dụng tĩnh (Vite)
+        run: npm run build
+
+      - name: Cấu hình và tải cấu trúc tĩnh lên Pages Artifact
+        uses: actions/configure-pages@v4
+
+      - name: Tải các file đóng gói trong thư mục dist lên
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Triển khai trang web lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
