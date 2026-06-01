@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Main School Brand info - 5 Cols */}
           <div className="md:col-span-12 lg:col-span-5 space-y-6">
             <div className="flex items-center gap-4">
-              <div className="text-2xl font-display tracking-[0.2em] text-[#D4AF37] font-bold leading-none">LEAP</div>
+              <div className="text-2xl font-display tracking-[0.15em] text-[#D4AF37] font-bold leading-none">LEAP VIỆT NAM</div>
               <div className="h-6 w-[1.5px] gold-foil-bg"></div>
               <div className="text-sm tracking-[0.25em] font-display font-medium uppercase text-white">
                 Ferrières

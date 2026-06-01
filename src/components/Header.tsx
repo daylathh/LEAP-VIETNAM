@@ -14,7 +14,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Brand from Editorial Theme Design */}
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <div className="text-2xl font-serif tracking-[0.15em] text-[#D4AF37] font-bold leading-none">LEAP</div>
+          <div className="text-xl md:text-2xl font-serif tracking-[0.1em] text-[#D4AF37] font-bold leading-none">LEAP VIỆT NAM</div>
           <div className="h-6 w-[1px] bg-[#D4AF37]/40"></div>
           <div className="text-xs md:text-sm tracking-[0.2em] font-serif opacity-90 uppercase text-ivory">
             Ferrières
